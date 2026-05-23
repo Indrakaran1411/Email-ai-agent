@@ -2,7 +2,7 @@
 
 ## Overview
 
-This agent reads Gmail messages, filters them by sender/keyword, summarizes the matched emails using a local Ollama AI instance, and sends a digest back to your Gmail account.
+This agent reads Gmail messages, filters them by sender and keyword, summarizes selected emails using a local Ollama AI instance, and sends a digest back to your Gmail account.
 
 ## Prerequisites
 
@@ -60,12 +60,12 @@ Example configuration:
 ### `config.json` fields
 
 - `my_email`: recipient email address for the digest
-- `watched_senders`: list of senders to match
-- `skip_subjects`: list of subjects to ignore in the digest
-- `keywords`: list of text keywords to match in subject/body
+- `watched_senders`: list of sender addresses or domains to match
+- `skip_subjects`: subject strings to ignore in the digest
+- `keywords`: text keywords to match in subject/body
 - `summarization_style`: `bullet`, `short`, `tldr`, or `full`
-- `max_emails`: number of messages to fetch
-- `digest_email`: email address for digest delivery
+- `max_emails`: maximum number of messages to fetch
+- `digest_email`: email address used to send the digest
 
 ## Run the agent
 
@@ -77,8 +77,8 @@ The first run will open a browser for Gmail OAuth consent and create `token.json
 
 ## Notes
 
-- The agent uses Ollama locally, not a cloud LLM API.
-- If the summary request fails, it falls back to a simple failure notice.
+- The agent uses a local Ollama server for summarization.
+- No external cloud LLM API key is required for the built-in summarization flow.
 - The digest is printed for review before sending.
 
 ## Troubleshooting
@@ -87,12 +87,12 @@ The first run will open a browser for Gmail OAuth consent and create `token.json
 - `Failed to summarize email.`: verify Ollama is running locally at `http://localhost:11434`
 - `Send digest to ...? (y/N)`: enter `y` to send the digest
 
-## Project files
+## Files in this project
 
 - `agent.py` — main script
-- `config.json` — project settings
+- `config.json` — project configuration
 - `credentials.json` — Gmail OAuth secrets
 - `token.json` — saved Gmail auth token
-- `requirements.txt` — dependencies
-- `SETUP.md` — setup guide
+- `requirements.txt` — Python dependencies
+- `SETUP.md` — install and run instructions
 - `README.md` — project documentation
