@@ -1,0 +1,30 @@
+{
+  "my_email": "heartzwork28@gmail.com",
+  "watched_senders": [
+    "gajulapravan@gmail.com",
+    "boss@company.com",
+    "alerts@github.com",
+    "no-reply@linkedin.com",
+    "support@bank.com",
+    "no-reply@accounts.google.com",
+    "no-reply@google.com",
+    "heartzwork28@gmail.com"
+  ],
+  "skip_subjects": [
+    "Your Gmail AI Digest",
+    "Your Daily Gmail Digest"
+  ],
+  "keywords": [
+    "urgent",
+    "invoice",
+    "meeting",
+    "security",
+    "deadline",
+    "report",
+    "action required",
+    "reminder"
+  ],
+  "summarization_style": "short",
+  "max_emails": 50,
+  "digest_email": "heartzwork28@gmail.com"
+}
