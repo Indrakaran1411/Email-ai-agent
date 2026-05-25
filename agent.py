@@ -271,7 +271,7 @@ def filter_emails(emails, cfg):
     return matched
 
 # ─────────────────────────────────────────────────────────────
-# GEMINI SUMMARIZATION
+# SUMMARIZATION
 # ─────────────────────────────────────────────────────────────
 def classify_and_summarize(emails, cfg):
     """Use Ollama (local AI) to summarize emails."""
